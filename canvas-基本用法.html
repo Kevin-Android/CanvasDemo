@@ -1,0 +1,50 @@
+<!--
+ * @Author: 康康
+ * @Date: 2022-03-31 18:29:07
+ * @LastEditTime: 2022-03-31 19:25:04
+ * @LastEditors: 康康
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas-基本用法</title>
+
+    <script type="text/javascript">
+        function draw() {
+            const canvas = document.getElementById('canvas');
+            // getContext() 可以设置渲染上下文 比如 '2d' webgl渲染上下文：'experimental-webgl'
+            const content = canvas.getContext('2d');
+            // 检测浏览器支持性
+            if (content) {
+                // content.fillStyle = 'green';
+                // content.fillRect(10, 10, 150, 100);
+
+                content.fillStyle = "rgb(200,0,0)";
+                content.fillRect(10, 10, 55, 50);
+
+                content.fillStyle = "rgba(0, 0, 200, 0.5)";
+                content.fillRect(30, 30, 55, 50);
+
+            } else {
+                alert("垃圾浏览器不支持canvas")
+            }
+        }
+    </script>
+</head>
+
+<body onload="draw()">
+    <!-- 默认宽高：300*150 -->
+    <canvas id="canvas">
+        <!-- 替换内容 在不支持canvas的浏览器上会展示 -->
+        current stock price: $3.15 +0.15
+        <!-- </canvas> 结束标签不可省略 -->
+    </canvas>
+</body>
+
+
+</html>
